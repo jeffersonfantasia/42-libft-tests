@@ -6,7 +6,7 @@
 #    By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/23 21:34:39 by jfranchi          #+#    #+#              #
-#    Updated: 2021/05/23 23:03:23 by jfranchi         ###   ########.fr        #
+#    Updated: 2021/05/25 20:24:53 by jfranchi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ run:
 	@echo "Program ended"
 
 clean:
-	@rm -f $(BIN)/*
+	@rm -vf $(BIN)/*
 	@echo "Binary has been deleted"
 
 .PHONY: all, run, clean
