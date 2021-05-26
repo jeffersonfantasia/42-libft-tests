@@ -6,7 +6,7 @@
 #    By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/23 21:34:39 by jfranchi          #+#    #+#              #
-#    Updated: 2021/05/25 20:24:53 by jfranchi         ###   ########.fr        #
+#    Updated: 2021/05/25 23:36:03 by jfranchi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,18 +21,16 @@ APPS = ./apps
 BIN = ./bin
 LIB = ../libft
 INCLUDE = ../libft
+OBJ = ./obj
+SRC = ./src
+HEADERS = ./headers
 
 #Compilation
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
 LIBS = -lft -L $(LIB)
-HEADERS = -I $(INCLUDE)
 
-#List all the source files with .c
-SRCS = main.c
-
-#Bin file
-NAME = main
+NAME = $(BIN)/main
 
  ###############################################################################
 #																				#
@@ -40,8 +38,10 @@ NAME = main
 #																				#
  ###############################################################################
 
-all: clean
-	$(CC) $(APPS)/$(SRCS) $(FLAGS) $(LIBS) $(HEADERS) -o $(BIN)/$(NAME)
+all: clean $(NAME)
+
+$(BIN)/%: $(APPS)/%.c
+	$(CC) $< src/main_ft_tolower.c $(FLAGS) $(LIBS) -I $(INCLUDE) -o $@
 
 run:
 	@echo "Program started"

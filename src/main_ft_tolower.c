@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_ft_tolower.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/23 21:24:45 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/05/25 23:33:47 by jfranchi         ###   ########.fr       */
+/*   Created: 2021/05/25 21:19:29 by jfranchi          #+#    #+#             */
+/*   Updated: 2021/05/25 23:37:03 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <ctype.h>
-
 #include "libft.h"
-#include "../headers/main_libft.h"
 
-
-//#include "../src/main_ft_tolower.c"
-//#include "../src/main_ft_toupper.c"
-
-int	main(void)
+void	main_ft_tolower(void)
 {
+	int	ch;
 
-	main_ft_tolower();
-	//main_ft_toupper();
-	//main_ft_isprint(0);
-
-	return (0);
+	ch = 'G';
+	printf("%c in lowercase is represented as = %c\n", ch, tolower(ch));
+	printf("%c in lowercase is represented as = %c\n\n", ch, ft_tolower(ch));
 }
