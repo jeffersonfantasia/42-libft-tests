@@ -6,7 +6,7 @@
 #    By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/23 21:34:39 by jfranchi          #+#    #+#              #
-#    Updated: 2021/05/25 23:36:03 by jfranchi         ###   ########.fr        #
+#    Updated: 2021/05/27 22:13:01 by jfranchi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,6 @@ APPS = ./apps
 BIN = ./bin
 LIB = ../libft
 INCLUDE = ../libft
-OBJ = ./obj
 SRC = ./src
 HEADERS = ./headers
 
@@ -30,6 +29,8 @@ CC = gcc
 FLAGS = -Wall -Wextra -Werror
 LIBS = -lft -L $(LIB)
 
+SRCS = $(wildcard $(SRC)/*.c)
+OBJS = $(SRCS:.c=.o)
 NAME = $(BIN)/main
 
  ###############################################################################
@@ -38,20 +39,31 @@ NAME = $(BIN)/main
 #																				#
  ###############################################################################
 
-all: clean $(NAME)
+all: clean objects $(NAME)
+
+objects: $(OBJS)
+
+$(SRC)/%.o: $(SRC)/%.c
+	$(CC) -c $(FLAGS) $(LIBS) -I $(INCLUDE) $< -o $@
 
 $(BIN)/%: $(APPS)/%.c
-	$(CC) $< src/main_ft_tolower.c $(FLAGS) $(LIBS) -I $(INCLUDE) -o $@
+	$(CC) $< $(SRC)/*.o $(FLAGS) $(LIBS) -I $(INCLUDE) -o $@
 
 run:
-	@echo "Program started"
+	@echo "\n"
+	@echo "____________________________Program started____________________________"
 	@echo "\n"
 	@$(BIN)/main
+	@echo "_____________________________Program ended_____________________________"
 	@echo "\n"
-	@echo "Program ended"
 
 clean:
-	@rm -vf $(BIN)/*
+	@rm -vf $(BIN)/* $(SRC)/*.o
 	@echo "Binary has been deleted"
 
-.PHONY: all, run, clean
+git:
+	git add .
+	git commit -m "upload files"
+	git push origin master
+
+.PHONY: all, run, clean, objects, git

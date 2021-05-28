@@ -6,12 +6,9 @@
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 21:24:45 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/05/25 23:33:47 by jfranchi         ###   ########.fr       */
+/*   Updated: 2021/05/27 22:02:58 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <ctype.h>
 
 #include "libft.h"
 #include "../headers/main_libft.h"
@@ -22,10 +19,38 @@
 
 int	main(void)
 {
+	puts("**********************************************************************\n");
+	puts("                               ft_tolower                             \n");
+	puts("**********************************************************************\n");
 
-	main_ft_tolower();
-	//main_ft_toupper();
-	//main_ft_isprint(0);
+	main_ft_tolower('a');
+	main_ft_tolower('b');
+	puts("\n\n");
+
+	puts("**********************************************************************\n");
+	puts("                               ft_toupper                             \n");
+	puts("**********************************************************************\n");
+	main_ft_toupper('c');
+	main_ft_toupper('r');
+	puts("\n\n");
+
+	puts("**********************************************************************\n");
+	puts("                               ft_isprint                             \n");
+	puts("**********************************************************************\n");
+	main_ft_isprint('k');
+	main_ft_isprint('8');
+	main_ft_isprint('\t');
+	main_ft_isprint(' ');
+	puts("\n\n");
+
+	puts("**********************************************************************\n");
+	puts("                               ft_isascii                             \n");
+	puts("**********************************************************************\n");
+	main_ft_isascii('k');
+	main_ft_isascii('8');
+	main_ft_isascii('\t');
+	main_ft_isascii(' ');
+	puts("\n\n");
 
 	return (0);
 }

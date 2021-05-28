@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_isprint.c                                  :+:      :+:    :+:   */
+/*   main_ft_isascii.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/25 21:15:37 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/05/27 21:42:58 by jfranchi         ###   ########.fr       */
+/*   Created: 2021/05/27 21:32:52 by jfranchi          #+#    #+#             */
+/*   Updated: 2021/05/27 21:52:41 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "../headers/main_libft.h"
 
-int	main_ft_isprint(int ch)
+int	main_ft_isascii(int ch)
 {
-	if( isprint(ch) ) {
-		printf("ch = |%c| can be printed\n", ch);
-	} else {
-		printf("ch = |%c| can't be printed\n", ch);
-	}
+	printf("%#04x    ", ch);
+	if (isascii(ch))
+		printf("isascii: The character is %c\n", ch);
+	else
+		printf("isascii: Cannot be represented by an ASCII character\n");
 
-	if( ft_isprint(ch) ) {
-		printf("ch = |%c| can be printed\n", ch);
-	} else {
-		printf("ch = |%c| can't be printed\n", ch);
-	}
+	printf("%#04x    ", ch);
+	if (ft_isascii(ch))
+		printf("ft_isascii: The character is %c\n", ch);
+	else
+		printf("ft_isascii: Cannot be represented by an ASCII character\n");
+	return 0;
 
-	return (ch);
 }
