@@ -6,7 +6,7 @@
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 21:32:52 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/05/27 21:52:41 by jfranchi         ###   ########.fr       */
+/*   Updated: 2021/05/31 13:29:48 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,15 @@
 
 int	main_ft_isascii(int ch)
 {
-	printf("%#04x    ", ch);
-	if (isascii(ch))
-		printf("isascii: The character is %c\n", ch);
-	else
-		printf("isascii: Cannot be represented by an ASCII character\n");
+	int function;
+	int ft_function;
 
-	printf("%#04x    ", ch);
-	if (ft_isascii(ch))
-		printf("ft_isascii: The character is %c\n", ch);
+	function = isascii(ch);
+	ft_function = ft_isascii(ch);
+	if (function == ft_function)
+		printf("function = %d and ft_function = %d - OK\n", function, ft_function);
 	else
-		printf("ft_isascii: Cannot be represented by an ASCII character\n");
-	return 0;
+		printf("function = %d and ft_function = %d - KO\n", function, ft_function);
+	return (ch);
 
 }
