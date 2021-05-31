@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_libft.h                                       :+:      :+:    :+:   */
+/*   main_ft_memset.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/20 21:06:39 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/05/31 19:56:39 by jfranchi         ###   ########.fr       */
+/*   Created: 2021/05/31 15:52:39 by jfranchi          #+#    #+#             */
+/*   Updated: 2021/05/31 20:07:33 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_LIBFT_H
-#define MAIN_LIBFT_H
+#include "libft.h"
+#include "../headers/main_libft.h"
 
-int		main_ft_tolower(int ch);
-int		main_ft_toupper(int ch);
-int		main_ft_isprint(int ch);
-int		main_ft_isascii(int ch);
-int		main_ft_isalnum(int ch);
-int		main_ft_isdigit(int ch);
-int		main_ft_isalpha(int ch);
-void	*main_ft_memset(char *str);
-void	main_ft_bzero(char *str1, char *str2, size_t n);
+void	*main_ft_memset(char *str)
+{
+	str = (char *) malloc(strlen(str) * sizeof(char));
 
-#endif
+	char *str1 = ft_memset(str, '-', 7);
+	char *str2 = memset(str, '-', 7);
+
+	if (strcmp(str1, str2) == 0)
+		printf("function and ft_function are equals - OK\n");
+	else
+		printf("function and ft_function are NOT equals - KO\n");
+	free (str);
+	return (str);
+}

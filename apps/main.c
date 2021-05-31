@@ -6,7 +6,7 @@
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 21:24:45 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/05/31 15:18:10 by jfranchi         ###   ########.fr       */
+/*   Updated: 2021/05/31 20:08:50 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,19 @@ int	main(void)
 	main_ft_isalpha('D');
 	puts("\n");
 
+	puts("**********************************************************************");
+	puts("                               ft_memset                              ");
+	puts("**********************************************************************\n");
+	main_ft_memset("GeeksForGeeks is for programming geeks");
+	main_ft_memset("   This is a great test!");
+	puts("\n");
+
+	puts("**********************************************************************");
+	puts("                               ft_bzero                               ");
+	puts("**********************************************************************\n");
+	main_ft_bzero("GeeksForGeeks is for programming geeks", "GeeksForGeeks is for programming geeks", 10);
+	main_ft_bzero("   This is a great test!", "   This is a great test!", 0);
+	puts("\n");
 
 	return (0);
 }
