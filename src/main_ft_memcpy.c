@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_libft.h                                       :+:      :+:    :+:   */
+/*   main_ft_memcpy.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/20 21:06:39 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/06/01 14:56:42 by jfranchi         ###   ########.fr       */
+/*   Created: 2021/06/01 14:55:33 by jfranchi          #+#    #+#             */
+/*   Updated: 2021/06/01 15:26:52 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_LIBFT_H
-# define MAIN_LIBFT_H
+#include "libft.h"
+#include "../headers/main_libft.h"
 
-int		main_ft_tolower(int ch);
-int		main_ft_toupper(int ch);
-int		main_ft_isprint(int ch);
-int		main_ft_isascii(int ch);
-int		main_ft_isalnum(int ch);
-int		main_ft_isdigit(int ch);
-int		main_ft_isalpha(int ch);
-void	*main_ft_memset(char *str);
-void	main_ft_bzero(char *str1, char *str2, size_t n);
-void	main_ft_memcpy(char *dest, char *src, int n);
+void	main_ft_memcpy(char *dest, char *src, int n)
+{
+	src = malloc(strlen(src) * sizeof(char));
+	dest = malloc(strlen(dest) * sizeof(char));
 
-#endif
+	printf("%s", src);
+	ft_memcpy(dest, src, n);
+	printf("%s", src);
+
+	free(src);
+	free(dest);
+}
