@@ -6,12 +6,12 @@
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 21:06:39 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/05/31 19:56:39 by jfranchi         ###   ########.fr       */
+/*   Updated: 2021/05/31 21:20:11 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MAIN_LIBFT_H
-#define MAIN_LIBFT_H
+# define MAIN_LIBFT_H
 
 int		main_ft_tolower(int ch);
 int		main_ft_toupper(int ch);
